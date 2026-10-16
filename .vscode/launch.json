@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "name": "Debug AppSwitch",
+            "target": "AppSwitch",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug AppSwitch"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "name": "Release AppSwitch",
+            "target": "AppSwitch",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release AppSwitch"
+        }
+    ]
+}
