@@ -5,20 +5,20 @@
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "name": "Debug AppSwitch",
-            "target": "AppSwitch",
+            "name": "Debug BKAppSwitch",
+            "target": "BKAppSwitch",
             "configuration": "debug",
-            "preLaunchTask": "swift: Build Debug AppSwitch"
+            "preLaunchTask": "swift: Build Debug BKAppSwitch"
         },
         {
             "type": "swift",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "name": "Release AppSwitch",
-            "target": "AppSwitch",
+            "name": "Release BKAppSwitch",
+            "target": "BKAppSwitch",
             "configuration": "release",
-            "preLaunchTask": "swift: Build Release AppSwitch"
+            "preLaunchTask": "swift: Build Release BKAppSwitch"
         }
     ]
 }

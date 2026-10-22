@@ -8,11 +8,11 @@ xcrun swiftc -module-cache-path .build/icon-module-cache scripts/CheckAppNotRunn
 .build/check-app-not-running
 swift build -c "$configuration"
 binary_dir="$(swift build -c "$configuration" --show-bin-path)"
-app="$PWD/dist/AppSwitch.app"
+app="$PWD/dist/BKAppSwitch.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources" .build/AppIcon.iconset
 xcrun swiftc -module-cache-path .build/icon-module-cache Resources/GenerateIcon.swift -o .build/generate-icon
 .build/generate-icon .build/AppIcon.iconset
-cp "$binary_dir/AppSwitch" "$app/Contents/MacOS/AppSwitch"
+cp "$binary_dir/BKAppSwitch" "$app/Contents/MacOS/BKAppSwitch"
 cp Resources/Info.plist "$app/Contents/Info.plist"
 iconutil -c icns .build/AppIcon.iconset -o "$app/Contents/Resources/AppIcon.icns"
 codesign --force --sign "${APPSWITCH_SIGN_IDENTITY:--}" --identifier dev.appswitch.app "$app"

@@ -25,7 +25,7 @@ private struct SettingsView: View {
             HStack(spacing: 14) {
                 Image(systemName: "rectangle.stack.fill").font(.system(size: 32)).foregroundStyle(.teal)
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("AppSwitch").font(.system(size: 26, weight: .bold))
+                    Text("BKAppSwitch").font(.system(size: 26, weight: .bold))
                     Text("选择你的应用，快速切换它们的窗口。")
                         .font(.system(size: 13)).foregroundStyle(.secondary)
                 }
@@ -68,7 +68,7 @@ private struct SettingsView: View {
                     Text(Bundle.main.bundleURL.path).font(.system(size: 10, design: .monospaced))
                         .textSelection(.enabled).fixedSize(horizontal: false, vertical: true)
                     if !permissions.accessibility {
-                        Text("若系统中的 AppSwitch 开关已打开，这里仍显示未授权：在辅助功能列表中用「−」移除旧的 AppSwitch，再用「+」添加上方路径的当前应用并开启权限，最后退出并重新打开 AppSwitch。")
+                        Text("若系统中的 BKAppSwitch 开关已打开，这里仍显示未授权：在辅助功能列表中用「−」移除旧的 BKAppSwitch，再用「+」添加上方路径的当前应用并开启权限，最后退出并重新打开 BKAppSwitch。")
                             .font(.system(size: 12)).foregroundStyle(.orange).fixedSize(horizontal: false, vertical: true)
                     }
                     HStack {
@@ -187,7 +187,7 @@ final class SettingsWindow {
                                     onEnable: onEnable, onPreview: onPreview, onDemo: onDemo, onRetry: onRetry)
             let host = NSHostingController(rootView: view)
             let window = NSWindow(contentViewController: host)
-            window.title = "AppSwitch 设置"
+            window.title = "BKAppSwitch 设置"
             window.styleMask = [.titled, .closable, .miniaturizable]
             window.isReleasedWhenClosed = false
             window.center()

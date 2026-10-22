@@ -2,12 +2,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "AppSwitch",
+    name: "BKAppSwitch",
     platforms: [.macOS(.v13)],
-    products: [.executable(name: "AppSwitch", targets: ["AppSwitch"])],
+    products: [.executable(name: "BKAppSwitch", targets: ["BKAppSwitch"])],
     targets: [
         .target(name: "AppSwitchCore"),
-        .executableTarget(name: "AppSwitch", dependencies: ["AppSwitchCore"]),
+        .executableTarget(name: "BKAppSwitch", dependencies: ["AppSwitchCore"]),
         .testTarget(name: "AppSwitchCoreTests", dependencies: ["AppSwitchCore"])
     ]
 )

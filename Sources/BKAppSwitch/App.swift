@@ -100,10 +100,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func setupMenu() {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.button?.image = NSImage(systemSymbolName: "rectangle.stack", accessibilityDescription: "AppSwitch")
-        item.button?.toolTip = "AppSwitch — 应用窗口切换"
+        item.button?.image = NSImage(systemSymbolName: "rectangle.stack", accessibilityDescription: "BKAppSwitch")
+        item.button?.toolTip = "BKAppSwitch — 应用窗口切换"
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "AppSwitch", action: nil, keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "BKAppSwitch", action: nil, keyEquivalent: ""))
         let status = NSMenuItem(title: "正在检查权限…", action: nil, keyEquivalent: "")
         menu.addItem(status)
         statusLine = status
@@ -115,7 +115,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         settingsItem.target = self
         menu.addItem(settingsItem)
         menu.addItem(.separator())
-        let quit = NSMenuItem(title: "退出 AppSwitch", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        let quit = NSMenuItem(title: "退出 BKAppSwitch", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         menu.addItem(quit)
         item.menu = menu
         statusItem = item
@@ -123,12 +123,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // Supply normal app/edit menu shortcuts while the settings window is active.
         let main = NSMenu()
         let applicationItem = NSMenuItem()
-        let applicationMenu = NSMenu(title: "AppSwitch")
-        let preferencesItem = NSMenuItem(title: "AppSwitch 设置…", action: #selector(showSettings), keyEquivalent: ",")
+        let applicationMenu = NSMenu(title: "BKAppSwitch")
+        let preferencesItem = NSMenuItem(title: "BKAppSwitch 设置…", action: #selector(showSettings), keyEquivalent: ",")
         preferencesItem.target = self
         applicationMenu.addItem(preferencesItem)
         applicationMenu.addItem(.separator())
-        applicationMenu.addItem(NSMenuItem(title: "退出 AppSwitch", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        applicationMenu.addItem(NSMenuItem(title: "退出 BKAppSwitch", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         applicationItem.submenu = applicationMenu
         main.addItem(applicationItem)
         let editItem = NSMenuItem()

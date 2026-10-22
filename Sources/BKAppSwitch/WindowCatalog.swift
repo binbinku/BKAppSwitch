@@ -89,7 +89,7 @@ private func windowMenuEntries(_ application: AXUIElement) -> [WindowMenuEntry] 
 final class WindowCatalog {
     private var trackedBundleIDs: Set<String> = []
     private var configurationRevision = 0
-    private let queue = DispatchQueue(label: "AppSwitch.accessibility", qos: .userInitiated)
+    private let queue = DispatchQueue(label: "BKAppSwitch.accessibility", qos: .userInitiated)
     // All fields except queue-confined `knownWindows` are used on the main thread.
     private var knownWindows: [CodeWindow] = []
     private var observers: [pid_t: AXObserver] = [:]

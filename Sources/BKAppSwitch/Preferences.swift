@@ -78,7 +78,7 @@ final class Preferences: ObservableObject {
                     continue
                 }
                 guard id != Bundle.main.bundleIdentifier else {
-                    errors.append("AppSwitch 本身无需加入切换列表。")
+                    errors.append("BKAppSwitch 本身无需加入切换列表。")
                     continue
                 }
                 selection.add(TrackedApplication(bundleIdentifier: id,

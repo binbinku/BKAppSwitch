@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/images/banner.en.svg" alt="AppSwitch — Hold ⌥, tap Tab, jump to any window." width="100%">
+<img src="docs/images/banner.en.svg" alt="BKAppSwitch — Hold ⌥, tap Tab, jump to any window." width="100%">
 
 <p>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-4DDBBD?style=flat-square"></a>
@@ -19,9 +19,9 @@
 
 ## 👋 About
 
-**AppSwitch** is an open-source window switcher that lives in the macOS menu bar.
+**BKAppSwitch** is an open-source window switcher that lives in the macOS menu bar.
 
-Juggling several VS Code projects plus a browser and a terminal? The built-in `⌘ Tab` only switches between apps. AppSwitch puts **every window** of the apps you choose into a single list: hold `⌥`, tap `Tab`, and you land on exactly the window you want.
+Juggling several VS Code projects plus a browser and a terminal? The built-in `⌘ Tab` only switches between apps. BKAppSwitch puts **every window** of the apps you choose into a single list: hold `⌥`, tap `Tab`, and you land on exactly the window you want.
 
 - 🪶 Native Swift + SwiftUI + AppKit, **no third-party dependencies**
 - 🔒 **No network requests**, no project files read, no account
@@ -33,7 +33,7 @@ Juggling several VS Code projects plus a browser and a terminal? The built-in `�
 ## 📸 Preview
 
 <div align="center">
-  <img src="docs/images/window-switcher.png" alt="The AppSwitch window list, showing app icons, window titles, the current selection and a minimized badge" width="560">
+  <img src="docs/images/window-switcher.png" alt="The BKAppSwitch window list, showing app icons, window titles, the current selection and a minimized badge" width="560">
 </div>
 
 <sub>Windows from different apps share one list. The highlighted row is the current selection. VS Code windows show the project name first and keep the original title underneath, and minimized windows get a badge (已最小化). The screenshot uses built-in demo data, not real work.</sub>
@@ -50,7 +50,7 @@ Juggling several VS Code projects plus a browser and a terminal? The built-in `�
 | :-: | --- | --- |
 | 🧩 | **Pick your apps** | VS Code is included by default. Add any `.app`, and pause or remove apps at any time |
 | 🪟 | **Switch by window** | Jump straight to a specific project or window, shown with the app's real icon |
-| 📌 | **Stable order** | Existing windows keep their relative position while AppSwitch runs, and new windows are added at the end |
+| 📌 | **Stable order** | Existing windows keep their relative position while BKAppSwitch runs, and new windows are added at the end |
 | ⌨️ | **Keyboard and mouse** | Reverse selection, arrow keys, release ⌥ to confirm, Esc to cancel, click to jump |
 | 🔽 | **Restores minimized windows** | Picking a minimized window restores and focuses it |
 | 🖥️ | **Finds windows on other Spaces** | Uses the Accessibility API and the app's native Window menu to fill in window information |
@@ -78,21 +78,21 @@ git clone https://github.com/binbinku/AppSwitch.git
 cd AppSwitch
 zsh scripts/build-app.sh
 zsh scripts/install-app.sh
-open /Applications/AppSwitch.app --args --settings
+open /Applications/BKAppSwitch.app --args --settings
 ```
 
-The build produces `dist/AppSwitch.app`, and the install script copies it to `/Applications/AppSwitch.app`. If you don't have the build tools yet, run `xcode-select --install` and follow the prompts.
+The build produces `dist/BKAppSwitch.app`, and the install script copies it to `/Applications/BKAppSwitch.app`. If you don't have the build tools yet, run `xcode-select --install` and follow the prompts.
 
 > [!TIP]
-> Install to Applications *before* granting permissions, and always run that one copy. The build and install scripts refuse to overwrite a running AppSwitch, so quit it from the menu bar before upgrading.
+> Install to Applications *before* granting permissions, and always run that one copy. The build and install scripts refuse to overwrite a running BKAppSwitch, so quit it from the menu bar before upgrading.
 
 ### Option 2: Install the DMG
 
 If [Releases](https://github.com/binbinku/AppSwitch/releases) has a disk image, you can download it and skip the developer tools:
 
 1. Download the `.dmg` for your Mac.
-2. Open it and drag **AppSwitch** to **Applications**.
-3. Eject the image and launch AppSwitch from Applications.
+2. Open it and drag **BKAppSwitch** to **Applications**.
+3. Eject the image and launch BKAppSwitch from Applications.
 4. Grant Accessibility access as described below.
 
 > [!NOTE]
@@ -100,9 +100,9 @@ If [Releases](https://github.com/binbinku/AppSwitch/releases) has a disk image, 
 
 ### 🔑 First launch: grant access and pick apps
 
-1. AppSwitch lives in the **menu bar at the top of the screen** and has no Dock icon. Click the stacked-windows icon and choose **设置与权限…** (*Settings & Permissions…*).
+1. BKAppSwitch lives in the **menu bar at the top of the screen** and has no Dock icon. Click the stacked-windows icon and choose **设置与权限…** (*Settings & Permissions…*).
 2. Click **授权辅助功能** (*Grant Accessibility*) to open **System Settings → Privacy & Security → Accessibility**.
-3. Add and enable `/Applications/AppSwitch.app`. If needed, quit AppSwitch and open it again. Access is granted once the settings window shows **辅助功能：已授权** (*Accessibility: Granted*).
+3. Add and enable `/Applications/BKAppSwitch.app`. If needed, quit BKAppSwitch and open it again. Access is granted once the settings window shows **辅助功能：已授权** (*Accessibility: Granted*).
 4. Under **参与切换的应用** (*Apps to switch between*), keep VS Code or click **添加应用…** (*Add App…*) to add others, and make sure their toggles are on.
 5. Open some windows in those apps, hold `⌥` and press `Tab` to start switching 🎉
 
@@ -128,13 +128,13 @@ In settings, you can change the trigger to `⌃ ⌥ Tab` or `⌥ Space`. With an
 
 ### 📌 Why doesn't the list reorder by recent use?
 
-Windows that stay in place are easier to find by memory. While AppSwitch runs, existing windows keep their relative order. New windows go to the end and closed ones drop out. Recent use only decides the **initial selection**, so you can jump back to your previous window quickly, but rows never move. The order is rebuilt when AppSwitch restarts.
+Windows that stay in place are easier to find by memory. While BKAppSwitch runs, existing windows keep their relative order. New windows go to the end and closed ones drop out. Recent use only decides the **initial selection**, so you can jump back to your previous window quickly, but rows never move. The order is rebuilt when BKAppSwitch restarts.
 
 ### 🏷️ Clearer VS Code project names
 
-AppSwitch tries to detect the project name in VS Code window titles. If you use a custom title, choose **项目名在前** (*Project name first*), **文件名在前** (*File name first*) or **完整原始标题** (*Full original title*) in settings.
+BKAppSwitch tries to detect the project name in VS Code window titles. If you use a custom title, choose **项目名在前** (*Project name first*), **文件名在前** (*File name first*) or **完整原始标题** (*Full original title*) in settings.
 
-We recommend adding this to your **user-level** VS Code `settings.json`, then setting AppSwitch to *Project name first*:
+We recommend adding this to your **user-level** VS Code `settings.json`, then setting BKAppSwitch to *Project name first*:
 
 ```json
 {
@@ -142,7 +142,7 @@ We recommend adding this to your **user-level** VS Code `settings.json`, then se
 }
 ```
 
-Detection is heuristic, and the full original title is always kept. To tell projects with the same name apart, use `${rootPath}` or different `.code-workspace` names. Title detection only applies to the VS Code family; other apps show their full window titles. AppSwitch never changes your VS Code settings and needs no extension.
+Detection is heuristic, and the full original title is always kept. To tell projects with the same name apart, use `${rootPath}` or different `.code-workspace` names. Title detection only applies to the VS Code family; other apps show their full window titles. BKAppSwitch never changes your VS Code settings and needs no extension.
 
 ## ❓ FAQ
 
@@ -151,25 +151,25 @@ Detection is heuristic, and the full original title is always kept. To tell proj
 
 <br>
 
-AppSwitch is a menu bar app, so it has no Dock icon while running. Click the stacked-windows icon at the top of the screen and choose 设置与权限… (*Settings & Permissions…*), or run:
+BKAppSwitch is a menu bar app, so it has no Dock icon while running. Click the stacked-windows icon at the top of the screen and choose 设置与权限… (*Settings & Permissions…*), or run:
 
 ```sh
-open /Applications/AppSwitch.app --args --settings
+open /Applications/BKAppSwitch.app --args --settings
 ```
 
 </details>
 
 <details>
-<summary><b>The Accessibility toggle is on, but AppSwitch still says it isn't authorized</b></summary>
+<summary><b>The Accessibility toggle is on, but BKAppSwitch still says it isn't authorized</b></summary>
 
 <br>
 
 The local ad-hoc signature can change when you rebuild or upgrade, and macOS may not apply the old grant to the new binary:
 
-1. Quit AppSwitch from the menu bar and make sure the new version is installed in its usual location.
-2. Remove the old AppSwitch entry from the Accessibility list.
-3. Add `/Applications/AppSwitch.app` again, turn it on, and launch AppSwitch from that path.
-4. Check the running app's path and authorization status in AppSwitch's settings (当前运行的应用, *Currently running app*).
+1. Quit BKAppSwitch from the menu bar and make sure the new version is installed in its usual location.
+2. Remove the old BKAppSwitch entry from the Accessibility list.
+3. Add `/Applications/BKAppSwitch.app` again, turn it on, and launch BKAppSwitch from that path.
+4. Check the running app's path and authorization status in BKAppSwitch's settings (当前运行的应用, *Currently running app*).
 
 Don't run the copy in `dist` and the one in Applications at the same time.
 
@@ -189,7 +189,7 @@ First, try **显示窗口列表** (*Show Window List*) from the menu bar. If the
 
 <br>
 
-Make sure the app is added, enabled, running and has windows open, and that AppSwitch has Accessibility access. The target app has to expose its windows through macOS Accessibility or its native Window menu, so how well this works varies between apps.
+Make sure the app is added, enabled, running and has windows open, and that BKAppSwitch has Accessibility access. The target app has to expose its windows through macOS Accessibility or its native Window menu, so how well this works varies between apps.
 
 </details>
 
@@ -198,7 +198,7 @@ Make sure the app is added, enabled, running and has windows open, and that AppS
 
 <br>
 
-AppSwitch finds windows through Accessibility and the app's native Window menu, and switches using interfaces the target app provides. It doesn't use private Spaces APIs. Results with different apps, full-screen windows and multiple displays need to be tested on real setups.
+BKAppSwitch finds windows through Accessibility and the app's native Window menu, and switches using interfaces the target app provides. It doesn't use private Spaces APIs. Results with different apps, full-screen windows and multiple displays need to be tested on real setups.
 
 If it doesn't move you to the right Space, check **System Settings → Desktop & Dock → Mission Control → "When switching to an application, switch to a Space with open windows for the application"**.
 
@@ -209,7 +209,7 @@ If it doesn't move you to the right Space, check **System Settings → Desktop &
 
 <br>
 
-No. AppSwitch has its own name and bundle ID (`dev.appswitch.app`) and installs to `/Applications/AppSwitch.app`. It doesn't replace CodeSwitch or migrate its preferences, so you need to grant access and set up your app list again. If you run both, give them different shortcuts. You can also try AppSwitch's demo mode first.
+No. BKAppSwitch has its own name and bundle ID (`dev.appswitch.app`) and installs to `/Applications/BKAppSwitch.app`. It doesn't replace CodeSwitch or migrate its preferences, so you need to grant access and set up your app list again. If you run both, give them different shortcuts. You can also try BKAppSwitch's demo mode first.
 
 </details>
 
@@ -218,9 +218,9 @@ No. AppSwitch has its own name and bundle ID (`dev.appswitch.app`) and installs 
 
 <br>
 
-There's no built-in launch-at-login switch yet. To launch it at login, add AppSwitch under **System Settings → General → Login Items**.
+There's no built-in launch-at-login switch yet. To launch it at login, add BKAppSwitch under **System Settings → General → Login Items**.
 
-To uninstall, quit AppSwitch from the menu bar and move AppSwitch.app to the Trash. You can also remove its entries from Accessibility and Login Items.
+To uninstall, quit BKAppSwitch from the menu bar and move BKAppSwitch.app to the Trash. You can also remove its entries from Accessibility and Login Items.
 
 </details>
 
@@ -248,7 +248,7 @@ Unit tests cover the core logic: stable window order, recent-window selection, m
 You can preview the UI without granting any permissions:
 
 ```sh
-open -n dist/AppSwitch.app --args --demo
+open -n dist/BKAppSwitch.app --args --demo
 ```
 
 Demo mode uses sample data, registers no system hotkey and never switches real windows. In normal mode, the settings window also has a UI preview entry (界面预览).
@@ -258,7 +258,7 @@ Demo mode uses sample data, registers no system hotkey and never switches real w
 To troubleshoot, pass an explicit path for the diagnostics file:
 
 ```sh
-open dist/AppSwitch.app --args --diagnostic-file /tmp/appswitch-status.json
+open dist/BKAppSwitch.app --args --diagnostic-file /tmp/appswitch-status.json
 ```
 
 ### 📦 Packaging and signing
@@ -267,7 +267,7 @@ open dist/AppSwitch.app --args --diagnostic-file /tmp/appswitch-status.json
 zsh scripts/package-release.sh
 ```
 
-This produces `dist/AppSwitch-<version>-macOS-arm64.dmg` and a matching `.sha256` checksum file. The image contains the app, an Applications shortcut and installation notes in Chinese. Packaging happens in a separate directory, and the script stops instead of overwriting an existing release file with the same name.
+This produces `dist/BKAppSwitch-<version>-macOS-arm64.dmg` and a matching `.sha256` checksum file. The image contains the app, an Applications shortcut and installation notes in Chinese. Packaging happens in a separate directory, and the script stops instead of overwriting an existing release file with the same name.
 
 Local builds use an ad-hoc signature by default. If you have an Apple Developer signing identity, pass it in:
 
@@ -282,7 +282,7 @@ Public distribution should use a Developer ID signature and Apple notarization. 
 ```text
 AppSwitch/
 ├── Sources/
-│   ├── AppSwitch/          # Menu bar entry, settings UI, window list, hotkeys, Accessibility
+│   ├── BKAppSwitch/          # Menu bar entry, settings UI, window list, hotkeys, Accessibility
 │   └── AppSwitchCore/      # Title detection, app selection, stable ordering, switch state (testable)
 ├── Tests/
 │   └── AppSwitchCoreTests/ # Unit tests for the core logic
@@ -295,7 +295,7 @@ AppSwitch/
 
 Contributions of all kinds are welcome 💚
 
-- 🐛 **Report a bug** in [Issues](https://github.com/binbinku/AppSwitch/issues). For window compatibility problems, include your macOS version, chip, AppSwitch version, the target app and its version, steps to reproduce, and whether full-screen or multiple Spaces are involved.
+- 🐛 **Report a bug** in [Issues](https://github.com/binbinku/AppSwitch/issues). For window compatibility problems, include your macOS version, chip, BKAppSwitch version, the target app and its version, steps to reproduce, and whether full-screen or multiple Spaces are involved.
 - 💡 **Suggest an idea** in Issues as well.
 - 🔧 **Send code** as a [Pull Request](https://github.com/binbinku/AppSwitch/pulls). Run `swift test` and the build script first. If your change touches window interaction, list the apps and scenarios you tested.
 - 🌍 **Help translate.** An English UI would be a great contribution.
@@ -311,7 +311,7 @@ You're free to use, modify and distribute this project, as long as you keep the 
 
 <div align="center">
   <br>
-  <img src="docs/images/logo.svg" alt="AppSwitch" width="64">
+  <img src="docs/images/logo.svg" alt="BKAppSwitch" width="64">
   <br>
-  <sub>If AppSwitch helps you, a ⭐️ would mean a lot</sub>
+  <sub>If BKAppSwitch helps you, a ⭐️ would mean a lot</sub>
 </div>

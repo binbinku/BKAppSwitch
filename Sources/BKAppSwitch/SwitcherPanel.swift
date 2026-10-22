@@ -53,7 +53,7 @@ private struct SwitcherView: View {
             HStack(spacing: 10) {
                 Image(systemName: "rectangle.stack.fill").font(.system(size: 19, weight: .semibold)).foregroundStyle(accent)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("AppSwitch").font(.system(size: 17, weight: .semibold))
+                    Text("BKAppSwitch").font(.system(size: 17, weight: .semibold))
                     Text("你的窗口，随手切换").font(.system(size: 11)).foregroundStyle(.secondary)
                 }
                 Spacer()
@@ -174,7 +174,7 @@ final class SwitcherPanel {
         panel.hidesOnDeactivate = false
         panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .ignoresCycle]
         panel.isReleasedWhenClosed = false
-        panel.title = "AppSwitch — 窗口切换"
+        panel.title = "BKAppSwitch — 窗口切换"
         panel.appearance = NSAppearance(named: .darkAqua)
         panel.isMovableByWindowBackground = true
     }
